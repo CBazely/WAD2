@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-{% load staticfiles %} 
-<html>
-<head>
-<title>About</title>
-</head>
-<body>
-<h1>This tutorial has been put together
-by Connor.</h1>
-<h2>rango says here is the about page</h2>
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+{{ about.name }}
+{% endblock %}
+{% block body_block %}
+{% if about %}
+<h1>{{ about.name }}</h1>
+<h2>This tutorial has been put together
+by Connor.</h2>
 <div>
 <img src="{% static "images/rango.jpg" %}"
 alt="Picture of some penguins" /> 
@@ -15,5 +15,4 @@ alt="Picture of some penguins" />
 <div>
 <img /> <img src="{{ MEDIA_URL}}cat.jpg">
 </div>
-</body>
-</html>
+{% endblock %}
